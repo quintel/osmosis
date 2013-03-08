@@ -1,29 +1,33 @@
 # Justice
 
-TODO: Write a gem description
+Full README coming soon; for the moment this is mostly [readme-driven
+development][rdd]. Justice is an extraction of the ETengine balancer so that
+it may be used in other Ruby applications.
 
-## Installation
+```ruby
+# The equilibrium is 100, while the values sum to 110. Therefore the excess
+# is 10. The first input (with value=50) is static so, Justice is disallowed
+# from changing its value.
+Justice.balance([
+  { min: 0.0, max: 100.0, value: 50.0, static: true },
+  { min: 0.0, max: 100.0, value: 20.0 },
+  { min: 0.0, max: 100.0, value: 40.0 }
+], 100.0)
 
-Add this line to your application's Gemfile:
+# => [ 50.0, 15.0, 35.0 ]
+```
 
-    gem 'justice'
+Rather than associating the balanced values by index, you can supply a hash
+when balancing and a hash of new values will be returned using the same keys:
 
-And then execute:
+```ruby
+Justice.balance(
+  first:  { min: 0.0, max: 100.0, value: 50.0, static: true },
+  second: { min: 0.0, max: 100.0, value: 20.0 },
+  third:  { min: 0.0, max: 100.0, value: 40.0 }
+], 100.0)
 
-    $ bundle
+# => { first: 50.0, second: 15.0, third: 35.0 }
+```
 
-Or install it yourself as:
-
-    $ gem install justice
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+[rdd]: http://tom.preston-werner.com/2010/08/23/readme-driven-development.html
