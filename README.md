@@ -21,11 +21,11 @@ Rather than associating the balanced values by index, you can supply a hash
 when balancing and a hash of new values will be returned using the same keys:
 
 ```ruby
-Justice.balance(
+Justice.balance({
   first:  { min: 0.0, max: 100.0, value: 50.0, static: true },
   second: { min: 0.0, max: 100.0, value: 20.0 },
   third:  { min: 0.0, max: 100.0, value: 40.0 }
-], 100.0)
+}, 100.0)
 
 # => { first: 50.0, second: 15.0, third: 35.0 }
 ```
