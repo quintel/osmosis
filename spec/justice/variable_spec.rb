@@ -11,8 +11,8 @@ describe Justice::Variable do
         expect(variable.value).to eq(30)
       end
 
-      it 'casts the value to a BigDecimal' do
-        expect(variable.value).to be_a(BigDecimal)
+      it 'casts the value to a Rational' do
+        expect(variable.value).to be_a(Rational)
       end
     end # when min <= value >= max
 
@@ -23,8 +23,8 @@ describe Justice::Variable do
         expect(variable.value).to be_zero
       end
 
-      it 'casts the value to a BigDecimal' do
-        expect(variable.value).to be_a(BigDecimal)
+      it 'casts the value to a Rational' do
+        expect(variable.value).to be_a(Rational)
       end
     end # when value < min
 
@@ -35,8 +35,8 @@ describe Justice::Variable do
         expect(variable.value).to eq(50)
       end
 
-      it 'casts the value to a BigDecimal' do
-        expect(variable.value).to be_a(BigDecimal)
+      it 'casts the value to a Rational' do
+        expect(variable.value).to be_a(Rational)
       end
     end # when value > max
   end # setting a value

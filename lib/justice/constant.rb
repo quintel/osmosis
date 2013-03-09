@@ -23,10 +23,9 @@ module Justice
     #
     # Returns a Variable.
     def initialize(min, max, value)
-      @min = obj_to_d(min)
-      @max = obj_to_d(max)
-
-      self.value = value
+      @min   = Justice.obj_to_d(min)
+      @max   = Justice.obj_to_d(max)
+      @value = Justice.obj_to_d(value)
     end
 
     # Public: The difference between the minimum and maximum values.
@@ -72,15 +71,8 @@ module Justice
       elsif new_value < @min
         @value = @min
       else
-        @value = obj_to_d(new_value)
+        @value = Justice.obj_to_d(new_value)
       end
-    end
-
-    # Internal: Given an object, tries to convert it to a BigDecimal.
-    #
-    # Returns a BigDecimal, or the +object+ if it could not be coerced.
-    def obj_to_d(object)
-      object.respond_to?(:to_d) ? object.to_d : object
     end
   end # Constant
 end # Justice

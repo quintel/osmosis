@@ -6,8 +6,8 @@ shared_examples 'a constant' do
       expect(variable.min).to eq(0)
     end
 
-    it 'casts to a BigDecimal when possible' do
-      expect(variable.min).to be_a(BigDecimal)
+    it 'casts to a Rational when possible' do
+      expect(variable.min).to be_a(Rational)
     end
   end # min
 
@@ -16,8 +16,8 @@ shared_examples 'a constant' do
       expect(variable.max).to eq(50)
     end
 
-    it 'casts to a BigDecimal when possible' do
-      expect(variable.max).to be_a(BigDecimal)
+    it 'casts to a Rational when possible' do
+      expect(variable.max).to be_a(Rational)
     end
   end # max
 
