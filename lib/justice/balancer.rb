@@ -1,13 +1,14 @@
 module Justice
-  # Balances a group of elements so taht the sum of their values "balances" to
+  # Balances a group of elements so that the sum of their values "balances" to
   # a chosen equilibrium.
+  #
+  # If you wish to provide a hash as input (to more easily associate each
+  # balanced value with the input), use HashBalancer instead.
   class Balancer
     # Public: Creates a new Balancer instance.
     #
     # elements    - An array of hashes, each containing an item which may be
     #               used by the balancer to reach the equilibrium.
-    #               Alternatively, a hash of hashes may be given so that you
-    #               can more easily associate balanced values with the input.
     # equilibrium - The value to which you want the elements to sum.
     #
     # Returns a Balancer.
@@ -34,8 +35,18 @@ module Justice
 
     # Public: Balances the elements so that they sum to the equilibrium.
     #
-    # Returns an array or hash of values, depending on which was given to
-    # +initialize+.
+    # For example:
+    #
+    #   balancer = HashBalancer.new([
+    #     { min: 0, max: 100, value: 75, static: true },
+    #     { min: 0, max: 100, :value  0 }
+    #   ])
+    #
+    #   balancer.balanced
+    #   # => [ 75, 25 ]
+    #
+    # Returns an array values, in the same order as those given when the
+    # balancer was initialized.
     def balanced
       variables, constants = @elements.partition { |el| el.is_a?(Variable) }
 

@@ -3,6 +3,7 @@ require 'rational'
 require 'justice/balancer'
 require 'justice/constant'
 require 'justice/errors'
+require 'justice/hash_balancer'
 require 'justice/variable'
 require 'justice/version'
 
