@@ -1,4 +1,4 @@
-# Justice
+# Justice [![Build Status](https://travis-ci.org/quintel/justice.png?branch=master)](https://travis-ci.org/quintel/justice)
 
 Full README coming soon; for the moment this is mostly [readme-driven
 development][rdd]. Justice is an extraction of the ETengine balancer so that
