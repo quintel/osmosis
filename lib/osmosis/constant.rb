@@ -66,27 +66,5 @@ module Osmosis
     def to_s
       @value.to_f.to_s
     end
-
-    #######
-    private
-    #######
-
-    # Public: Sets the value of the variable.
-    #
-    # If the value is less than the minimum, the minimum is used. Likewise,
-    # if the value exceeds the maximum, the maximum will be used instead.
-    #
-    # value - The value to set.
-    #
-    # Returns the value you gave (even if a different one was set).
-    def value=(new_value)
-      if new_value > @max
-        @value = @max
-      elsif new_value < @min
-        @value = @min
-      else
-        @value = Osmosis.rational(new_value)
-      end
-    end
   end # Constant
 end # Osmosis
