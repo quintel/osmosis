@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Justice::Variable do
+describe Osmosis::Variable do
   include_examples 'a constant'
 
   describe 'setting a value' do
@@ -101,4 +101,4 @@ describe Justice::Variable do
     end
   end # with min/value/max of 0/50/50
 
-end # Justice::Variable
+end # Osmosis::Variable

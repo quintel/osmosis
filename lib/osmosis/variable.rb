@@ -1,4 +1,4 @@
-module Justice
+module Osmosis
   # Represents a element whose value may be altered by the Balancer in order
   # to reach an equilibrium.
   class Variable < Constant
@@ -36,4 +36,4 @@ module Justice
       ((direction == :up ? @max : @min) - @value).abs
     end
   end # Variable
-end # Justice
+end # Osmosis

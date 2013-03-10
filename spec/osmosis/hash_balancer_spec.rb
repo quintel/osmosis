@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Justice::HashBalancer do
-  let(:values) { Justice::HashBalancer.new(elements).balanced }
+describe Osmosis::HashBalancer do
+  let(:values) { Osmosis::HashBalancer.new(elements).balanced }
 
   describe 'With { a: 50*, b: 0, c: 0 }' do
     let(:elements) { {
@@ -30,4 +30,4 @@ describe Justice::HashBalancer do
       expect(values[:c]).to eq(25)
     end
   end # With { a: 50*, b: 0, c: 0 }
-end
+end # Osmosis::HashBalancer

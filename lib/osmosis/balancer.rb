@@ -1,4 +1,4 @@
-module Justice
+module Osmosis
   # Balances a group of elements so that the sum of their values "balances" to
   # a chosen equilibrium.
   #
@@ -23,7 +23,7 @@ module Justice
         end
       end
 
-      @equilibrium = Justice.obj_to_d(equilibrium)
+      @equilibrium = Osmosis.obj_to_d(equilibrium)
     end
 
     # Public: A human-readable version of the Balancer.
@@ -59,14 +59,14 @@ module Justice
       # example, if a group of element which sum to 100 has one element
       # increased by 20, the new sum is 120. The flex is therefore -20
       # indicating that the group needs to be reduced by 20 to compensate.
-      flex = @equilibrium - Justice.sum(values)
+      flex = @equilibrium - Osmosis.sum(values)
 
       iteration_els = variables.dup
 
       10.times do |iteration|
         next_els    = []
         start_flex  = flex
-        delta       = Justice.sum(variables.map(&:delta))
+        delta       = Osmosis.sum(variables.map(&:delta))
         brute_force = false
 
         if start_flex.abs < (delta * 0.0001) || iteration == 9
@@ -129,7 +129,7 @@ module Justice
     #
     # Returns true or false.
     def balances?
-      Justice.sum(values) == @equilibrium
+      Osmosis.sum(values) == @equilibrium
     end
 
     # Internal: Creates an array containing all the current element values.
@@ -139,4 +139,4 @@ module Justice
       @elements.map(&:value)
     end
   end
-end # Justice
+end # Osmosis

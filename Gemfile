@@ -12,5 +12,5 @@ group :extras do
   gem 'pry',                     require: false
 end
 
-# Specify your gem's dependencies in justice.gemspec
+# Specify your gem's dependencies in osmosis.gemspec
 gemspec

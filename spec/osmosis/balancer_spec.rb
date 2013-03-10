@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Justice::Balancer do
+describe Osmosis::Balancer do
   let(:equilibrium) { 100 }
-  let(:values)      { Justice::Balancer.new(elements, equilibrium).balanced }
+  let(:values)      { Osmosis::Balancer.new(elements, equilibrium).balanced }
 
   # --------------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ describe Justice::Balancer do
     ] }
 
     it 'raises a NoVariablesError' do
-      expect { values }.to raise_error(Justice::NoVariablesError)
+      expect { values }.to raise_error(Osmosis::NoVariablesError)
     end
   end # With (50*, 25*, 24*)
 
@@ -91,7 +91,7 @@ describe Justice::Balancer do
     ] }
 
     it 'raises a CannotBalanceError' do
-      expect { values }.to raise_error(Justice::CannotBalanceError)
+      expect { values }.to raise_error(Osmosis::CannotBalanceError)
     end
   end # With (110*, 0, 0)
 
@@ -123,7 +123,7 @@ describe Justice::Balancer do
     ] }
 
     it 'raises a CannotBalanceError' do
-      expect { values }.to raise_error(Justice::CannotBalanceError)
+      expect { values }.to raise_error(Osmosis::CannotBalanceError)
     end
   end # With (-101, 0, 0)
 
@@ -232,7 +232,7 @@ describe Justice::Balancer do
       ] }
 
       it 'raises a CannotBalanceError' do
-        expect { values }.to raise_error(Justice::NoVariablesError)
+        expect { values }.to raise_error(Osmosis::NoVariablesError)
       end
     end # given values which cannot balance
   end # When a variable has a delta of zero
@@ -268,7 +268,7 @@ describe Justice::Balancer do
       ] }
 
       it 'raises a CannotBalanceError' do
-        expect { values }.to raise_error(Justice::CannotBalanceError)
+        expect { values }.to raise_error(Osmosis::CannotBalanceError)
       end
     end # given (0*, -1*, 0)
   end # When each element has min/max of -100/100
@@ -370,7 +370,7 @@ describe Justice::Balancer do
       ] }
 
       it 'raises a CannotBalanceError' do
-        expect { values }.to raise_error(Justice::CannotBalanceError)
+        expect { values }.to raise_error(Osmosis::CannotBalanceError)
       end
     end
   end # With min/max of 0/100, 0/40, 0/10
@@ -416,7 +416,7 @@ describe Justice::Balancer do
       end
 
       it 'does not raise a CannotBalanceError' do
-        expect { values }.to_not raise_error(Justice::CannotBalanceError)
+        expect { values }.to_not raise_error(Osmosis::CannotBalanceError)
       end
     end # given (89.88999...*, ...)
 
@@ -426,7 +426,7 @@ describe Justice::Balancer do
       end
 
       it 'does not raise a CannotBalanceError' do
-        expect { values }.to_not raise_error(Justice::CannotBalanceError)
+        expect { values }.to_not raise_error(Osmosis::CannotBalanceError)
       end
     end # given 89.999...*, ...)
 
@@ -436,9 +436,9 @@ describe Justice::Balancer do
       end
 
       it 'does not raise a CannotBalanceError' do
-        expect { values }.to_not raise_error(Justice::CannotBalanceError)
+        expect { values }.to_not raise_error(Osmosis::CannotBalanceError)
       end
     end # given (99*, ...)
   end # With irregular values
 
-end # Justice::Balancer
+end # Osmosis::Balancer

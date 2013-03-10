@@ -1,4 +1,4 @@
-module Justice
+module Osmosis
   # Balances a group of elements so that the sum of their values "balances" to
   # a chosen equilibrium.
   #
@@ -43,4 +43,4 @@ module Justice
       "#<#{ self.class.name } equilibrium=#{ '%f' % @equilibrium }>"
     end
   end # HashBalancer
-end # Justice
+end # Osmosis

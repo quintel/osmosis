@@ -1,8 +1,8 @@
-module Justice
-  # Error class which serves as a base for all errors which occur in Justice.
-  JusticeError = Class.new(StandardError)
+module Osmosis
+  # Error class which serves as a base for all errors which occur in Osmosis.
+  OsmosisError = Class.new(StandardError)
 
-  # Internal: Creates a new error class which inherits from JusticeError,
+  # Internal: Creates a new error class which inherits from OsmosisError,
   # whose message is created by evaluating the block you give.
   #
   # For example
@@ -12,10 +12,10 @@ module Justice
   #   end
   #
   #   raise MyError.new(5000, 2500)
-  #   # => #<Justice::MyError: 5000 exceeds 2500>
+  #   # => #<Osmosis::MyError: 5000 exceeds 2500>
   #
   # Returns an exception class.
-  def self.error_class(superclass = JusticeError, &block)
+  def self.error_class(superclass = OsmosisError, &block)
     Class.new(superclass) do
       def initialize(*args) ; super(make_message(*args)) ; end
       define_method(:make_message, &block)
@@ -32,4 +32,4 @@ module Justice
   NoVariablesError = error_class do |*|
     "?!"
   end
-end # Justice
+end # Osmosis

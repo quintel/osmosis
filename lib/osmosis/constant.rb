@@ -1,4 +1,4 @@
-module Justice
+module Osmosis
   class Constant
     # Public: The minimum value to which the variable may be set.
     #
@@ -23,9 +23,9 @@ module Justice
     #
     # Returns a Variable.
     def initialize(min, max, value)
-      @min   = Justice.obj_to_d(min)
-      @max   = Justice.obj_to_d(max)
-      @value = Justice.obj_to_d(value)
+      @min   = Osmosis.obj_to_d(min)
+      @max   = Osmosis.obj_to_d(max)
+      @value = Osmosis.obj_to_d(value)
     end
 
     # Public: The difference between the minimum and maximum values.
@@ -71,8 +71,8 @@ module Justice
       elsif new_value < @min
         @value = @min
       else
-        @value = Justice.obj_to_d(new_value)
+        @value = Osmosis.obj_to_d(new_value)
       end
     end
   end # Constant
-end # Justice
+end # Osmosis

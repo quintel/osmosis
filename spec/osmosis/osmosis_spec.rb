@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe Justice do
+describe Osmosis do
   describe '.balance' do
     context 'given an array of values' do
       let(:values) do
-        Justice.balance([
+        Osmosis.balance([
           { min: 0, max: 100, value: 50, static: true },
           { min: 0, max: 100, value: 0 }
         ])
@@ -21,7 +21,7 @@ describe Justice do
 
     context 'given a hash of values' do
       let(:values) do
-        Justice.balance({
+        Osmosis.balance({
           a: { min: 0, max: 100, value: 50, static: true },
           b: { min: 0, max: 100, value: 0 }
         })
@@ -36,4 +36,4 @@ describe Justice do
       end
     end # given an array of values
   end # .balance
-end # Justice
+end # Osmosis

@@ -1,17 +1,17 @@
 # coding: utf-8
 $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
 
-require 'justice/version'
+require 'osmosis/version'
 
 Gem::Specification.new do |s|
-  s.name          = 'justice'
-  s.version       = Justice::VERSION
+  s.name          = 'osmosis'
+  s.version       = Osmosis::VERSION
   s.platform      = Gem::Platform::RUBY
 
   s.authors       = [ 'Anthony Williams' ]
   s.email         = [ 'hi@antw.me' ]
 
-  s.homepage      = 'http://github.com/quintel/justice'
+  s.homepage      = 'http://github.com/quintel/osmosis'
   s.summary       = 'Balanced groups of numeric values.'
   s.description   = 'Balanced groups of numeric values.'
   s.license       = 'BSD'

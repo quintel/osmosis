@@ -1,13 +1,13 @@
 require 'rational'
 
-require 'justice/balancer'
-require 'justice/constant'
-require 'justice/errors'
-require 'justice/hash_balancer'
-require 'justice/variable'
-require 'justice/version'
+require 'osmosis/balancer'
+require 'osmosis/constant'
+require 'osmosis/errors'
+require 'osmosis/hash_balancer'
+require 'osmosis/variable'
+require 'osmosis/version'
 
-module Justice
+module Osmosis
   # Public: Balances the given values.
   #
   # elements    - An array or hash containing hashes, each of which is item to
@@ -51,6 +51,6 @@ module Justice
   #
   # Returns a numeric.
   def self.sum(values)
-    values.inject(Justice.obj_to_d(0)) { |sum, value| sum + value }
+    values.inject(Osmosis.obj_to_d(0)) { |sum, value| sum + value }
   end
-end # Justice
+end # Osmosis
