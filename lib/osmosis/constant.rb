@@ -23,9 +23,9 @@ module Osmosis
     #
     # Returns a Variable.
     def initialize(min, max, value)
-      @min   = Osmosis.obj_to_d(min)
-      @max   = Osmosis.obj_to_d(max)
-      @value = Osmosis.obj_to_d(value)
+      @min   = Osmosis.rational(min)
+      @max   = Osmosis.rational(max)
+      @value = Osmosis.rational(value)
     end
 
     # Public: The difference between the minimum and maximum values.
@@ -85,7 +85,7 @@ module Osmosis
       elsif new_value < @min
         @value = @min
       else
-        @value = Osmosis.obj_to_d(new_value)
+        @value = Osmosis.rational(new_value)
       end
     end
   end # Constant

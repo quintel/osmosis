@@ -43,7 +43,7 @@ module Osmosis
   # Internal: Given an object, tries to convert it to a BigDecimal.
   #
   # Returns a BigDecimal, or the +object+ if it could not be coerced.
-  def self.obj_to_d(object)
+  def self.rational(object)
     Rational(object.to_s)
   end
 

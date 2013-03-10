@@ -23,7 +23,7 @@ module Osmosis
         end
       end
 
-      @equilibrium = Osmosis.obj_to_d(equilibrium)
+      @equilibrium = Osmosis.rational(equilibrium)
     end
 
     # Public: A human-readable version of the Balancer.
