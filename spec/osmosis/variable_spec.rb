@@ -101,4 +101,12 @@ describe Osmosis::Variable do
     end
   end # with min/value/max of 0/50/50
 
+  it 'is not a constant' do
+    expect(described_class.new(0, 50, 20)).to_not be_constant
+  end
+
+  it 'is not variable' do
+    expect(described_class.new(0, 50, 20)).to be_variable
+  end
+
 end # Osmosis::Variable

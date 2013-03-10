@@ -48,7 +48,7 @@ module Osmosis
     # Returns an array values, in the same order as those given when the
     # balancer was initialized.
     def balanced
-      variables, constants = @elements.partition { |el| el.is_a?(Variable) }
+      variables, constants = @elements.partition { |el| el.variable? }
 
       if variables.empty?
         # Having no variables is fine if the values already balance.

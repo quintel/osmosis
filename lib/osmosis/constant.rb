@@ -35,6 +35,20 @@ module Osmosis
       @delta ||= @max - @min
     end
 
+    # Public: Does this object have a fixed value which may not be changed?
+    #
+    # Returns true or false.
+    def constant?
+      true
+    end
+
+    # Public: Is the balancer permitted to change the value of this object?
+    #
+    # Returns true or false.
+    def variable?
+      not constant?
+    end
+
     # Public: A human-readable version of the variable.
     #
     # Returns a string.

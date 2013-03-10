@@ -35,5 +35,12 @@ module Osmosis
     def headroom(direction)
       ((direction == :up ? @max : @min) - @value).abs
     end
+
+    # Public: Does this object have a fixed value which may not be changed?
+    #
+    # Returns true or false.
+    def constant?
+      false
+    end
   end # Variable
 end # Osmosis
