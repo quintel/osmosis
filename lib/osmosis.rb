@@ -51,6 +51,6 @@ module Osmosis
   #
   # Returns a numeric.
   def self.sum(values)
-    values.inject(Osmosis.obj_to_d(0)) { |sum, value| sum + value }
+    values.reduce(:+) || Rational(0)
   end
 end # Osmosis
