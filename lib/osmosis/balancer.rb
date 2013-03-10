@@ -66,7 +66,7 @@ module Osmosis
       10.times do |iteration|
         next_els    = []
         start_flex  = flex
-        delta       = Osmosis.sum(variables.map(&:delta))
+        delta       = Osmosis.sum(iteration_els.map(&:delta))
         brute_force = false
 
         if start_flex.abs < (delta * 0.0001) || iteration == 9

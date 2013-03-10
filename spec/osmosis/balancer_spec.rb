@@ -401,6 +401,30 @@ describe Osmosis::Balancer do
 
   # --------------------------------------------------------------------------
 
+  describe 'With min/max of 0/50' do
+    # Asserts that elements which have reached their maximum or minimum are
+    # excluded from the cumulative delta calculation in future iterations.
+    let(:elements) { [
+      { min: 0, max: 50, value: 40 },
+      { min: 0, max: 50, value:  0 },
+      { min: 0, max: 50, value:  0 }
+    ] }
+
+    it 'sets the first variable to 50' do
+      expect(values[0]).to eq(50)
+    end
+
+    it 'sets the second variable to 25' do
+      expect(values[1]).to eq(25)
+    end
+
+    it 'sets the third variable to 25' do
+      expect(values[2]).to eq(25)
+    end
+  end
+
+  # --------------------------------------------------------------------------
+
   describe 'With irregular values' do
     let(:elements) { [
       { min: 0, max: 100, value: 89.99, static: true },
