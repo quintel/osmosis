@@ -44,6 +44,10 @@ module Osmosis
   #
   # Returns a BigDecimal, or the +object+ if it could not be coerced.
   def self.rational(object)
+    unless object.is_a?(Numeric)
+      raise Osmosis::InvalidValueError.new(object)
+    end
+
     Rational(object.to_s)
   end
 

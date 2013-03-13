@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'bigdecimal'
 
 describe Osmosis do
   describe '.balance' do
@@ -36,4 +37,32 @@ describe Osmosis do
       end
     end # given an array of values
   end # .balance
+
+  describe '.rational' do
+    it 'returns a rational given an Integer' do
+      expect(Osmosis.rational(1)).to be_a(Rational)
+    end
+
+    it 'returns a rational given a Float' do
+      expect(Osmosis.rational(1.0)).to be_a(Rational)
+    end
+
+    it 'returns a rational given a BigDecimal' do
+      expect(Osmosis.rational(BigDecimal.new('1.0'))).to be_a(Rational)
+    end
+
+    it 'returns a rational given a Rational' do
+      expect(Osmosis.rational(Rational(1))).to be_a(Rational)
+    end
+
+    it 'raises Osmosis::InvalidValue when given a string' do
+      expect { Osmosis.rational('') }.
+        to raise_error(Osmosis::InvalidValueError)
+    end
+
+    it 'raises Osmosis::InvalidValue when given nil' do
+      expect { Osmosis.rational(nil) }.
+        to raise_error(Osmosis::InvalidValueError)
+    end
+  end # .rational
 end # Osmosis

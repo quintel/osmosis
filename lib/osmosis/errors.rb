@@ -32,4 +32,9 @@ module Osmosis
   NoVariablesError = error_class do |*|
     "?!"
   end
+
+  # Raised when supplying Osmosis with a non-numeric value.
+  InvalidValueError = error_class do |thing|
+    "Non-numeric value given: #{ thing.inspect }"
+  end
 end # Osmosis
