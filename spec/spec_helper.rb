@@ -15,7 +15,4 @@ RSpec.configure do |config|
   # `--tag focus` when you only want to run certain examples.
   config.filter_run(focus: true)
   config.run_all_when_everything_filtered = true
-
-  # Allow adding examples to a filter group with only a symbol.
-  config.treat_symbols_as_metadata_keys_with_true_values = true
 end

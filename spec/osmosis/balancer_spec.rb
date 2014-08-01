@@ -440,7 +440,7 @@ describe Osmosis::Balancer do
       end
 
       it 'does not raise a CannotBalanceError' do
-        expect { values }.to_not raise_error(Osmosis::CannotBalanceError)
+        expect { values }.to_not raise_error
       end
     end # given (89.88999...*, ...)
 
@@ -450,7 +450,7 @@ describe Osmosis::Balancer do
       end
 
       it 'does not raise a CannotBalanceError' do
-        expect { values }.to_not raise_error(Osmosis::CannotBalanceError)
+        expect { values }.to_not raise_error
       end
     end # given 89.999...*, ...)
 
@@ -460,7 +460,7 @@ describe Osmosis::Balancer do
       end
 
       it 'does not raise a CannotBalanceError' do
-        expect { values }.to_not raise_error(Osmosis::CannotBalanceError)
+        expect { values }.to_not raise_error
       end
     end # given (99*, ...)
   end # With irregular values

@@ -53,11 +53,11 @@ describe Osmosis::Variable do
     end
 
     it 'can_change?(:up) is true' do
-      expect(variable.can_change?(:up)).to be_true
+      expect(variable.can_change?(:up)).to be
     end
 
     it 'can_change?(:down) is true' do
-      expect(variable.can_change?(:down)).to be_true
+      expect(variable.can_change?(:down)).to be
     end
   end # with min/value/max of 0/25/50
 
@@ -73,11 +73,11 @@ describe Osmosis::Variable do
     end
 
     it 'can_change?(:up) is true' do
-      expect(variable.can_change?(:up)).to be_true
+      expect(variable.can_change?(:up)).to be
     end
 
     it 'can_change?(:down) is false' do
-      expect(variable.can_change?(:down)).to be_false
+      expect(variable.can_change?(:down)).to_not be
     end
   end # with min/value/max of 0/0/50
 
@@ -93,11 +93,11 @@ describe Osmosis::Variable do
     end
 
     it 'can_change?(:up) is false' do
-      expect(variable.can_change?(:up)).to be_false
+      expect(variable.can_change?(:up)).to_not be
     end
 
     it 'can_change?(:down) is true' do
-      expect(variable.can_change?(:down)).to be_true
+      expect(variable.can_change?(:down)).to be
     end
   end # with min/value/max of 0/50/50
 
