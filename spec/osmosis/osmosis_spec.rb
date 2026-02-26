@@ -48,7 +48,7 @@ describe Osmosis do
     end
 
     it 'returns a rational given a BigDecimal' do
-      expect(Osmosis.rational(BigDecimal.new('1.0'))).to be_a(Rational)
+      expect(Osmosis.rational(BigDecimal('1.0'))).to be_a(Rational)
     end
 
     it 'returns a rational given a Rational' do

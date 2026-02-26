@@ -1,5 +1,5 @@
 require 'rspec'
-require 'support/coverage' if ENV['COVERAGE']
+require 'support/coverage'
 require 'osmosis'
 
 Dir['./spec/support/**/*.rb'].map do |file|
