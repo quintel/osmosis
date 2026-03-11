@@ -5,7 +5,7 @@ describe Osmosis::Constant do
 
   describe 'setting a new value' do
     it 'is not allowed' do
-      expect { described_class.new(0, 50, 25).value = 40 }.to raise_error
+      expect { described_class.new(0, 50, 25).value = 40 }.to raise_error(NoMethodError)
     end
   end # setting a new value
 

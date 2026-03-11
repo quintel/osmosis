@@ -1,13 +1,22 @@
 version: v1.0
-name: Initial Pipeline
+name: Test Osmosis
 agent:
   machine:
-    type: f1-standard-2
-    os_image: ubuntu2204
+    type: e1-standard-2
+    os_image: ubuntu2404
 blocks:
-  - name: 'Block #1'
+  - name: RSpec
     task:
       jobs:
-        - name: 'Job #1'
+        - name: Test
           commands:
             - checkout
+            - sem-version ruby $RUBY_VERSION
+            - gem install bundler -v ">= 2.0"
+            - bundle install
+            - bundle exec rspec
+          matrix:
+            - env_var: RUBY_VERSION
+              values:
+                - '3.3'
+                - '4.0'
